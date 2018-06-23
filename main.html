@@ -3,9 +3,10 @@
     <!--CSS
 
     -->
+    <link rel="icon" href="clock.png">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Crimetime</title>
+    <title>crimetime</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -23,9 +24,10 @@
     </style>
   </head>
   <body>
-    <h1>Crime Time</h1>
+    <h1>crimetime</h1>
     <div id="map"></div>
-    <script>
+       <script>
+      var percentage = 0.5;
       var map;
       var marker = false;
       function initMap() {
@@ -34,12 +36,21 @@
           zoom: 10
         });
         //new
-        
+        function checkRate(p){
+          var pct = 1 - percentage;
+          if(pct >= 0.7)
+            return 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+          else if (pct >= 0.4 && pct < 0.7)
+            return 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+          else
+            return 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+          }
         var marker = new google.maps.Marker({
         position: {lng: -74.0060, lat: 40.7128},
-        title:"Hello World!"
-        
-});
+        title:"Hello World!",
+        map: map,
+        icon: checkRate(percentage)
+      });
   //adding the marker to the map
   marker.setMap(map);
       }
@@ -49,5 +60,41 @@ AIzaSyDLF0nZ9geMKndvaYy-d9b8JXkwR4PS93Q
 &callback=initMap"
     async defer></script>
 
+
+
+<table style="width:50%">
+  <tr>
+    <th>Type of Crime</th>
+    <th>Rate</th> 
+  </tr>
+  <tr>
+    <td align="center">Assault</td>
+    <td align="center">0</td> 
+  </tr>
+  <tr>
+    <td align="center">DUI</td>
+    <td align="center">0</td> 
+  </tr>
+   <tr>
+    <td align="center">Weapon</td>
+    <td align="center">0</td> 
+  </tr>
+</table>
+
+<style>
+.footer {
+    position: bottom;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+</style>
+
+<div class="footer">
+  <p>by Ruchir Pandya & Eddie Lin & Chirag Trivedi & Mohamed Abdelmenam & Gabriella Roman</p>
+</div>
   </body>
 </html>
