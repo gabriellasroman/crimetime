@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <!--CSS
+
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Crimetime</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 80%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Crime Time</h1>
+    <div id="map"></div>
+    <script>
+      var map;
+      var marker = false;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lng: -73.965155, lat: 40.785229},
+          zoom: 10
+        });
+        //new
+        
+        var marker = new google.maps.Marker({
+        position: {lng: -74.0060, lat: 40.7128},
+        title:"Hello World!"
+        
+});
+  //adding the marker to the map
+  marker.setMap(map);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyDLF0nZ9geMKndvaYy-d9b8JXkwR4PS93Q
+&callback=initMap"
+    async defer></script>
+
+  </body>
+</html>
