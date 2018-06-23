@@ -1,6 +1,8 @@
 <html>
   <head>
-    
+    <!--CSS
+
+    -->
     <link rel="icon" href="unknown.png">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -16,13 +18,14 @@
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
-        margin: 0;
+        margin: 40;
         padding: 0;
       }
     </style>
   </head>
   <body>
     <h1>crimetime</h1>
+    <h2>a webapp detailing criminal activity in new york</h2>
     <div id="map"></div>
        <script>
       var percentage = 0.5;
@@ -31,7 +34,7 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lng: -73.965155, lat: 40.785229},
-          zoom: 10
+          zoom: 10.5
         });
         //new
         function checkRate(p){
@@ -58,27 +61,6 @@ AIzaSyDLF0nZ9geMKndvaYy-d9b8JXkwR4PS93Q
 &callback=initMap"
     async defer></script>
 
-
-
-<table style="width:50%">
-  <tr>
-    <th>Type of Crime</th>
-    <th>Rate</th> 
-  </tr>
-  <tr>
-    <td align="center">Assault</td>
-    <td align="center">0</td> 
-  </tr>
-  <tr>
-    <td align="center">DUI</td>
-    <td align="center">0</td> 
-  </tr>
-   <tr>
-    <td align="center">Weapon</td>
-    <td align="center">0</td> 
-  </tr>
-</table>
-
 <style>
 .footer {
     position: bottom;
@@ -88,6 +70,7 @@ AIzaSyDLF0nZ9geMKndvaYy-d9b8JXkwR4PS93Q
     background-color: black;
     color: white;
     text-align: center;
+    font-family: "Comfortaa", sans-serif;
 }
 </style>
 
